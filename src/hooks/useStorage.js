@@ -1,9 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const useStorage = () => {
-    const getItem = async (key) => {
+    const getItem = (key) => {
         try {
-            const passwords = await AsyncStorage.getItem(key)
+            const passwords = localStorage.getItem(key)
             return JSON.parse(passwords) || []
 
         }catch(error) {
